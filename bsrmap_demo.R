@@ -85,7 +85,7 @@ pathway_list <- list()
 pathway_list[["residents"]] <- pathway_likelihood(
   pathway_layers = population_density,
   leakage_rate_ci = c(3, 33),
-  establishment_rate_ci = c(0.001, 0.01))
+  viability_rate_ci = c(0.001, 0.01))
 terra::plot(log10(pathway_list[["residents"]] + 1e-8), colNA = "blue",
             main = "Pathway arrival probability: residents (log)")
 
@@ -93,7 +93,7 @@ terra::plot(log10(pathway_list[["residents"]] + 1e-8), colNA = "blue",
 pathway_list[["vessels"]] <- pathway_likelihood(
   pathway_layers = port_distance_weight,
   leakage_rate_ci = c(3, 30),
-  establishment_rate_ci = c(0.001, 0.01))
+  viability_rate_ci = c(0.001, 0.01))
 terra::plot(log10(pathway_list[["vessels"]] + 1e-8), colNA = "blue",
             main = "Pathway arrival probability: vessels (log)")
 
